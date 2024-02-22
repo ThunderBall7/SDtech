@@ -34,7 +34,7 @@ const SignUp = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-gray-100">
       <div className="w-full max-w-md">
-        <div className="pt-6 pb-8">
+        <div className="px-8 pt-6 pb-8">
           <div className="mb-4">
             <label className="block text-gray-500 text-sm font-bold mb-2" htmlFor="username">
               Username
@@ -76,7 +76,7 @@ const SignUp = () => {
           </div>
           <div className="flex items-center justify-between">
             <button
-              className="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none font-medium focus:shadow-outline"
+              className="bg-blue-500 w-[270px] lg:w-96 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none font-medium focus:shadow-outline"
               type="button"
               onClick={handleSignUp}
             >
