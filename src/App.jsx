@@ -22,10 +22,10 @@ function App() {
         }));
         dispatch(setLoading(false));
       }else{
-        console.log('user not there')
+        dispatch(setLoading(false));
       }
     })
-  }, [])
+  }, [dispatch])
 
   const user = useSelector(state => state.data.user.user)
   const isLoading = useSelector((state) => state.data.user.isLoading);

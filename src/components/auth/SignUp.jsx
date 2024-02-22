@@ -9,6 +9,12 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
 
   const handleSignUp = async () => {
+
+    if (!username || !email || !password) {
+      console.error('fill in all fields')
+      alert('Please fill in all fields');
+      return;
+    }
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const userData = userCredential.user;

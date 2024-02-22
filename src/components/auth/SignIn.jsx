@@ -9,7 +9,12 @@ const SignIn = () => {
 
 
   const handleLogIn = async() => {
-    signInWithEmailAndPassword(auth, email, password);
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      console.error("user not found");
+      alert("Email or Password is incorrect");
+    }
   };
 
   return (
