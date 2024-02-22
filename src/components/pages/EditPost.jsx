@@ -84,7 +84,7 @@ const EditPost = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6">
+    <div className="max-w-lg mx-auto p-6 lg:mb-48">
       <h2 className="text-2xl font-bold mb-4">Edit Post</h2>
       <form onSubmit={handleSubmit}>
         <input
