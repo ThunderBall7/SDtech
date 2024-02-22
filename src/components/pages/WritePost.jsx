@@ -78,7 +78,7 @@ const WritePost = () => {
 
 
   return (
-  <div className="w-full max-w-lg mx-auto p-6 bg-white ">
+  <div className="w-full max-w-lg mx-auto lg:mb-64 p-6 bg-white ">
   <h2 className="text-2xl font-bold mb-4 text-gray-500">Write Post</h2>
   <form onSubmit={addPost}>
     <div className="relative">
