@@ -15,7 +15,6 @@ const Post = () => {
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(postData);
   const navigate = useNavigate();
 
   const currentUser = useSelector((state)=>state.data.user.user.username);

@@ -12,6 +12,7 @@ function App() {
 
   const dispatch = useDispatch();
 
+
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
       if(authUser){

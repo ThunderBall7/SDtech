@@ -6,11 +6,11 @@ import { loginUser } from "../../redux/features/userSlice";
 
 const SignUp = () => {
 
-  const dispatch = useDispatch();
-
   const [username, SetUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleSignUp = async () => {
 
@@ -24,18 +24,18 @@ const SignUp = () => {
       const userData = userCredential.user;
 
       await updateProfile(userData, { displayName: username });
+      await signInWithEmailAndPassword(auth, email, password);
 
       dispatch(loginUser({
-        user: {
           uid: userData.uid,
           username: userData.displayName,
           email: userData.email,
-        }
+
       }));
 
-      await signInWithEmailAndPassword(auth, email, password);
 
       console.log("signed up");
+
     } catch (error) {
 
       console.log(error);

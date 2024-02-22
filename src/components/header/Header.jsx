@@ -12,6 +12,8 @@ const Header = () => {
   const dispatch = useDispatch();
   const username = useSelector((state)=>state.data.user.user.username);
 
+  console.log(username)
+
 
   const handleLogout = () => {
     dispatch(loginUser());
