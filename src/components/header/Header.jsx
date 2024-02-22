@@ -12,6 +12,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const username = useSelector((state)=>state.data.user.user.username);
 
+
   const handleLogout = () => {
     dispatch(loginUser());
     signOut(auth);
@@ -45,7 +46,7 @@ const Header = () => {
                   {username.charAt(0).toUpperCase() + username.slice(1)}
                 </li>
               )}
-            <li className='md:hidden sm:hidden'>
+            <li className='hidden lg:block'>
               <button
               className="hover:text-gray-300"
               onClick={handleLogout}

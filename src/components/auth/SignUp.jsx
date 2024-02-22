@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { auth } from "../../firebase/Firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { loginUser } from "../../redux/features/userSlice";
 
 const SignUp = () => {
+
+  const dispatch = useDispatch();
 
   const [username, SetUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -20,6 +24,14 @@ const SignUp = () => {
       const userData = userCredential.user;
 
       await updateProfile(userData, { displayName: username });
+
+      dispatch(loginUser({
+        user: {
+          uid: userData.uid,
+          username: userData.displayName,
+          email: userData.email,
+        }
+      }));
 
       await signInWithEmailAndPassword(auth, email, password);
 

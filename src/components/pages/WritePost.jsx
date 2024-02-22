@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Timestamp, addDoc, collection} from "firebase/firestore"
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 
@@ -16,11 +16,15 @@ const WritePost = () => {
     category: '',
     content: '',
     time: Timestamp.now(),
-    username: username,
+    username: '',
 });
 
   const [thumbnail, setThumbnail] = useState();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setPostData((prevData) => ({ ...prevData, username: username }));
+  }, []);
 
 
 
@@ -69,6 +73,8 @@ const WritePost = () => {
       console.error('Error adding post:', error);
     }
   }
+
+
 
 
   return (

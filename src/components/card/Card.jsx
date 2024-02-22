@@ -21,7 +21,7 @@ const Card = ({ title, category, content, imageUrl, postId, date, username, like
       onClick={() => handleClick(postId)}
       >
         <img
-          className="mx-auto block w-4/12 h-40 rounded-lg"
+          className="mx-auto block lg:w-4/12 h-40 rounded-lg"
           alt="art cover"
           loading="lazy"
           src={imageUrl}
@@ -43,7 +43,7 @@ const Card = ({ title, category, content, imageUrl, postId, date, username, like
                 <p className="text-sm max-h-28 content ">{content}</p>
               </div>
               <div className="px-3 py-1 rounded-lg flex space-x-2 flex-row">
-                <div className="cursor-pointer text-center text-md justify-center items-center flex">
+                <div className="cursor-pointer text-center text-md justify-center items-center lg:flex md:hidden sm:hidden">
                   <img src={heart} alt="" />
                   <span className="text-md mx-1">{likes || 0}</span>
                 </div>
@@ -71,7 +71,7 @@ const Card = ({ title, category, content, imageUrl, postId, date, username, like
                 <p className="text-xs">{date}</p>
                 </div>
               </div>
-              <div className="flex flex-row space-x-1">
+              <div className="flex flex-row space-x-1 ">
                 <div className="bg-green-500 shadow-lg shadow-green-600 text-white cursor-pointer px-3 text-center justify-center items-center py-1 rounded-xl flex space-x-2 flex-row">
                   <img src={like} alt="" />
 <span>{likes || 0}</span>

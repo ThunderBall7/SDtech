@@ -1,7 +1,7 @@
 
 import Home from "../Home";
 import Header from "../../header/Header";
-// import Footer from "../../footer/Footer";
+import Footer from "../../footer/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AboutUs from "../AboutUs";
 import WritePost from "../WritePost";
@@ -23,7 +23,7 @@ const Layout = () => {
           <Route path="/edit-post/:postId" element={<EditPost />} />
 
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
 
 
