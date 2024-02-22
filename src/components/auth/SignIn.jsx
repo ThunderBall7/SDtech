@@ -26,7 +26,7 @@ const SignIn = () => {
               Email
             </label>
             <input
-              className="shadow appearance-none border rounded w-96 py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline focus:border-gray-300"
+              className="shadow appearance-none border rounded w-80 lg:w-96 py-2 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline focus:border-gray-300"
               id="email"
               type="email"
               placeholder="Email"
@@ -39,7 +39,7 @@ const SignIn = () => {
               Password
             </label>
             <input
-              className="shadow appearance-none border rounded w-96 py-2 px-3 text-gray-500 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:border-gray-300"
+              className="shadow appearance-none border rounded w-80 lg:w-96 py-2 px-3 text-gray-500 mb-3 leading-tight focus:outline-none focus:shadow-outline focus:border-gray-300"
               id="password"
               type="password"
               placeholder="********"

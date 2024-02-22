@@ -8,7 +8,8 @@ const Auth = () => {
   const [showSignIn, setShowSignIn] = useState(true);
 
   return (
-    <div className="flex min-h-screen font-sans bg-[#f3f4f6]">
+    <div className='bg-[#f3f4f6]'>
+    <div className="flex h-screen font-sans]">
       <div className="flex-1  flex items-center justify-center">
         <div className="max-w-md ">
           <div className='flex flex-col items-center gap-4 mb-4'>
@@ -32,6 +33,7 @@ const Auth = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
