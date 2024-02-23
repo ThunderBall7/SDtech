@@ -28,7 +28,7 @@ const Header = () => {
           <img src={logo} alt="Logo" className="h-8" />
           </Link>
           <Link to={"/"}>
-            <p className="font-bold">SDTech Blogs</p>
+            <p className="font-bold">SDBlogs</p>
           </Link>
         </div>
         <nav>
@@ -57,7 +57,7 @@ const Header = () => {
             <li className='lg:hidden'
             onClick={handleLogout}
             >
-              <img src={logoutLogo} className='w-7' alt="" />
+              <img src={logoutLogo} className='w-7 cursor-pointer' alt="" />
             </li>
           </ul>
         </nav>

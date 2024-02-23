@@ -43,7 +43,7 @@ const Card = ({ title, category, content, imageUrl, postId, date, username, like
                 <p className="text-sm max-h-28 content ">{content}</p>
               </div>
               <div className="px-3 py-1 rounded-lg flex space-x-2 flex-row">
-                <div className="cursor-pointer text-center text-md justify-center items-center lg:flex md:hidden sm:hidden">
+                <div className="cursor-pointer text-center text-md justify-center items-center lg:flex hidden">
                   <img src={heart} alt="" />
                   <span className="text-md mx-1">{likes || 0}</span>
                 </div>
