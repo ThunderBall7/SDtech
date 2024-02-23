@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db, storage } from '../../firebase/Firebase';
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
+import { toast } from 'react-toastify';
 
 const EditPost = () => {
   const { postId } = useParams();
@@ -57,7 +58,7 @@ const EditPost = () => {
     e.preventDefault();
     try {
       if (!postData.title || !postData.category || !postData.content) {
-        console.log('Please fill in all fields.');
+        toast.error('Please fill in all fields.');
         return;
       }
 
@@ -76,10 +77,10 @@ const EditPost = () => {
 
       const postRef = doc(db, 'blogPost', postId);
       await updateDoc(postRef, updatedPostData);
-      console.log('Post updated successfully!');
+      toast.success('Post updated successfully!');
       navigate(`/post/${postId}`);
     } catch (error) {
-      console.error('Error updating post:', error);
+      toast.error('Error updating post');
     }
   };
 

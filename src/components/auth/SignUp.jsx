@@ -3,6 +3,7 @@ import { auth } from "../../firebase/Firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/features/userSlice";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
 
@@ -15,9 +16,16 @@ const SignUp = () => {
   const handleSignUp = async () => {
 
     if (!username || !email || !password) {
-      console.error('fill in all fields')
-      alert('Please fill in all fields');
-      return;
+      return toast.error('fill in all fields')
+    }
+
+    const emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailCheck.test(email)) {
+      return toast.error('Invalid email address');
+    }
+
+    if(password.length < 6){
+      return toast.error('Password must be at least 6 characters')
     }
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -32,13 +40,14 @@ const SignUp = () => {
           email: userData.email,
 
       }));
-
-
-      console.log("signed up");
+      toast.success("signed up");
 
     } catch (error) {
-
-      console.log(error);
+      if (error.code === 'auth/email-already-in-use') {
+        toast.error('Email is already in use');
+      } else {
+        toast.error('An error occurred while signing up');
+      }
     }
   };
 

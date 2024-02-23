@@ -6,6 +6,7 @@ import { db, storage } from "../../firebase/Firebase";
 import { useNavigate } from "react-router-dom";
 import './style.css'
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const WritePost = () => {
 
@@ -27,17 +28,17 @@ const WritePost = () => {
   }, []);
 
 
-
-  console.log(username);
-
   const addPost = async (e) => {
     e.preventDefault();
 
     try {
-      if (!thumbnail || postData.title === "" || postData.category === "" || postData.content === "") {
-        console.log('Please fill in all fields and select a thumbnail.');
-        return;
+      if (postData.title === "" || postData.category === "" || postData.content === "") {
+        return toast.error('Please fill in all fields');
       }
+      if (!thumbnail) {
+        return toast.error('Please select a thumbnail.');
+      }
+
 
       const imageRef = ref(storage, `blogimage/${thumbnail.name}`);
       const snapshot = await uploadBytes(imageRef, thumbnail);
@@ -68,12 +69,11 @@ const WritePost = () => {
       setThumbnail(null);
 
       navigate('/');
-      console.log('Post Added Successfully');
+      toast.success('Post Added Successfully');
     } catch (error) {
-      console.error('Error adding post:', error);
+      toast.error('Error adding post');
     }
   }
-
 
 
 

@@ -1,6 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth } from "../../firebase/Firebase";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
 
@@ -9,11 +10,14 @@ const SignIn = () => {
 
 
   const handleLogIn = async() => {
+    if(!email || !password) {
+      return toast.error("Fill all the requiered fields")
+    }
     try {
       await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-      console.error("user not found");
-      alert("Email or Password is incorrect");
+      toast.error('Email or Password is incorrect');
+      // alert("Email or Password is incorrect");
     }
   };
 
