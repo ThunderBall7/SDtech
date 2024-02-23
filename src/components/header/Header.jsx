@@ -32,7 +32,7 @@ const Header = () => {
           </Link>
         </div>
         <nav>
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-4 items-center">
             <li>
               <Link to={"/about"} className="hover:text-gray-300">About Us</Link>
             </li>
