@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
-import logo from '/public/logo.svg'
+import kettle from '/public/kettle.png'
 import './auth.css'
 
 const Auth = () => {
@@ -13,9 +13,9 @@ const Auth = () => {
       <div className="flex-1  flex items-center justify-center">
         <div className="max-w-md ">
           <div className='flex flex-col items-center gap-4 mb-4'>
-            <img src={logo} alt="" className='w-14'/>
-            <p className='text-gray-700'>SDTECH (Formerly Studio Diseño)</p>
-            <p className='text-gray-500 text-sm'>Blog site for SDTech, Post all about latest techs</p>
+            <img src={kettle} alt="" className='w-16'/>
+            <p className='text-gray-700'>Algosium Blogs and Tea</p>
+            <p className='text-gray-500 text-sm'>Share whatever you feel like! Literally whatever!</p>
 
           </div>
 

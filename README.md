@@ -1,11 +1,11 @@
-# SDBlog (Blog Web App)
+# Algosium Blog (Blog Web App)
 
 
-Welcome to SDBlog, a modern web application for blogging built with React.js(Vite), Tailwind CSS, Firebase, React Router DOM, Redux.js/Toolkit and redux
+Welcome to Algosium Blog, a modern web application for blogging built with React.js(Vite), Tailwind CSS, Firebase, React Router DOM, Redux.js/Toolkit and redux
 
 ## About
 
-SDBlog is a user-friendly interface coupled with modern design to offer an nice blogging experience.It allowsusers to create, read, update, delete, publish their content seamlessly.
+Algosium Blog is a user-friendly interface coupled with modern design to offer an nice blogging experience.It allowsusers to create, read, update, delete, publish their content seamlessly.
 
 ## Features
 
@@ -22,9 +22,9 @@ SDBlog is a user-friendly interface coupled with modern design to offer an nice 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/ThunderBall7/SDtech.git
+   git clone https://github.com/ThunderBall7/SDBlog.git
 
-2. cd SDtech
+2. cd SD
 
 3. npm install
 

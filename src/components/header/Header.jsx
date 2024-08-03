@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import logo from '../../../public/logo.svg';
+import logo from '../../../public/kettle.png';
 import { auth } from "../../../src/firebase/Firebase";
 import { loginUser } from "../../redux/features/userSlice";
 import { signOut } from 'firebase/auth';
@@ -18,14 +18,14 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-gray-100 text-gray-700">
+    <div className="bg-gray-100 text-gray-700 relative">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="flex items-center space-x-4">
           <Link>
           <img src={logo} alt="Logo" className="h-8" />
           </Link>
           <Link to={"/"}>
-            <p className="font-bold">SDBlogs</p>
+            <p className="font-bold">Algosium Blogs & Tea</p>
           </Link>
         </div>
         <nav>
@@ -58,6 +58,8 @@ const Header = () => {
             </li>
           </ul>
         </nav>
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#00000f] via-[#672fe5] to-[#4933da]"></div>
+
       </div>
     </div>
   );

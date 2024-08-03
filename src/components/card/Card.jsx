@@ -15,7 +15,7 @@ const Card = ({ title, category, content, imageUrl, postId, date, username, like
   };
 
   return (
-    <div className="flex items-center justify-center mb-3 ">
+    <div className="flex items-center justify-center mb-3 customCard">
       <div
       className="p-4 items-center justify-center w-[680px] rounded-xl group sm:flex space-x-6 bg-white bg-opacity-50 shadow-xl hover:rounded-2xl mt-4 cursor-pointer"
       onClick={() => handleClick(postId)}
