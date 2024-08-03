@@ -13,6 +13,7 @@ const Card = ({ title, category, content, imageUrl, postId, date, username, like
   const handleClick = (postId) => {
     navigate(`/post/${postId}`)
   };
+  
 
   return (
     <div className="flex items-center justify-center mb-3 customCard">
